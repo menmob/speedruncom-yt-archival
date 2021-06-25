@@ -14,7 +14,7 @@ urls = urls.split('\n')
 
 for url in urls:
     url = f'https://www.youtube.com/watch?v={url}'
-    time.sleep(0.5)
+    #time.sleep(0.05)
     num +=1
     print(f"Checked {num} urls - {url}. {numu} unlisted so far.")
 
