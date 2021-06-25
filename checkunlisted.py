@@ -37,7 +37,7 @@ for url in urls:
             f.close()
         pass
    
-    if 'ytd-badge-supported-renderer">Unlisted' in data:
+    if 'isUnlisted":true' in data:
         with open('yt-speedrun-links-unlisted.txt', 'a') as f:
             f.write(url + "\n")
             f.close()
