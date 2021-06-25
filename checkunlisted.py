@@ -16,13 +16,25 @@ for url in urls:
     time.sleep(0.5)
     num +=1
     print(f"Checked {num} urls - {url}. {numu} unlisted so far.")
+
     try:
         data = requests.get(url).text
     except:
         print(f'{url} - FAILED')
+        with open('failed.txt', 'a') as f:
+            f.write(url + "\n")
+            f.close()
         pass
+    if not 'style-scope ytd-video-view-count-renderer' in data:
+        print(f'{url} - FAILED')
+        with open('failed.txt', 'a') as f:
+            f.write(url + "\n")
+            f.close()
+        pass
+   
     if 'ytd-badge-supported-renderer">Unlisted' in data:
         with open('yt-speedrun-links-unlisted.txt', 'a') as f:
             f.write(url + "\n")
+            f.close()
             numu += 1
             
