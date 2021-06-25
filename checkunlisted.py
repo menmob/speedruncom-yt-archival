@@ -30,7 +30,7 @@ for url in urls:
             f.write(url + "\n")
             f.close()
         pass
-    if not 'style-scope ytd-video-view-count-renderer' in data:
+    if not '"viewCount":{"simpleText":"' in data:
         print(f'{url} - FAILED')
         with open('failed.txt', 'a') as f:
             f.write(url + "\n")
