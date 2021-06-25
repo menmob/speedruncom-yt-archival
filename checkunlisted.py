@@ -7,6 +7,7 @@ numu = 0
 
 with open('yt-speedrun-links.txt', 'r') as f:
     urls = f.read()
+    f.close()
 
 urls = urls.split('\n')
 
@@ -19,6 +20,10 @@ for url in urls:
 
     try:
         data = requests.get(url).text
+        with open('debug.html', 'w+') as f:
+            f.write(data)
+            f.close()
+
     except:
         print(f'{url} - FAILED')
         with open('failed.txt', 'a') as f:
