@@ -143,7 +143,7 @@ for game in games:
             pass
         data = json.loads(data)
         offset += 200
-        if offset < 9800:
+        if offset >= 9800:
             with open('failedgames.txt', 'a') as f:
                 f.write(game + "\n")
                 f.close()
