@@ -7,7 +7,7 @@ import sys
 
 
 os.chdir(sys.path[0])
-url = "https://www.speedrun.com/api/v1/runs?max=200"
+url = "https://www.speedrun.com/api/v1/games?max=250"
 while True:
 
     time.sleep(0.6)
@@ -20,14 +20,12 @@ while True:
         url = data['pagination']['links'][1]['uri']
     except:
         url = data['pagination']['links'][0]['uri']
-        print("THIS SHOULD ONLY HAPPEN ON FIRST PAGE\n\n\n\n\n\n\n")
-    for run in data['data']:
+    for game in data['data']:
         try:
-            for video in run['videos']['links']:
-                video = video['uri']
-                print(video)
-                with open('yt-speedrun-links.txt', 'a') as f:
-                    f.write(video + "\n")
+            id = game['id']
+            print(id)
+            with open('yt-speedrun-games.txt', 'a') as f:
+                f.write(id + "\n")
 
         except:
             pass
