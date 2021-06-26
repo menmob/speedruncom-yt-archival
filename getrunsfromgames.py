@@ -126,6 +126,8 @@ games = games.split('\n')
 
 
 for game in games:
+    if game == "":
+        pass
     offset = 0
     print(game)
     url = f"https://www.speedrun.com/api/v1/runs?game={game}&max=200"
