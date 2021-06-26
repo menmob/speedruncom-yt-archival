@@ -136,12 +136,13 @@ for game in games:
         print(url)
         try:
             data = requests.get(url, proxies=getprox()).text
+            data = json.loads(data)
         except:
             with open('failedruns.txt', 'a') as f:
                 f.write(url + "\n")
                 f.close()
             pass
-        data = json.loads(data)
+        
         offset += 200
         if offset >= 9800:
             with open('failedgames.txt', 'a') as f:
