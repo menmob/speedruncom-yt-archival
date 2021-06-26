@@ -5,7 +5,6 @@ import os
 import sys
 import random
 
-file = sys.argv[1]
 
 def getprox():
     proxies = ['u2.p.webshare.io:10000',
@@ -118,7 +117,7 @@ def getprox():
     return(proxies)
 os.chdir(sys.path[0])
 
-with open(f'{file}yt-speedrun-games.txt', 'r') as f:
+with open(f'yt-speedrun-games.txt', 'r') as f:
     games = f.read()
     f.close()
 
