@@ -1,0 +1,8 @@
+https://www.speedrun.com/api/v1/runs?game=m1zq2m10&max=200&offset=200
+https://www.speedrun.com/api/v1/runs?game=j1n8ow1p&max=200&offset=600
+https://www.speedrun.com/api/v1/runs?game=nd2x0q60&max=200&offset=200
+https://www.speedrun.com/api/v1/runs?game=lde3k956&max=200&offset=1600
+https://www.speedrun.com/api/v1/runs?game=4d7y0nd7&max=200
+https://www.speedrun.com/api/v1/runs?game=k6q4k0md&max=200&offset=200
+https://www.speedrun.com/api/v1/runs?game=m9dok31p&max=200&offset=3200
+https://www.speedrun.com/api/v1/runs?game=v1p5g4d8&max=200
