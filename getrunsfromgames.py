@@ -137,8 +137,13 @@ for game in games:
         data = requests.get(url, proxies=getprox()).text
         data = json.loads(data)
         offset += 200
-        if len(data['data']) < 1:
-            continue_game = False
+        try:
+            if len(data['data']) < 1:
+                continue_game = False
+        except:
+            with open('failedgames.txt', 'a') as f:
+                f.write(game + "\n")
+                f.close()
         url = f"https://www.speedrun.com/api/v1/runs?game={game}&max=200&offset={offset}"
 
         for run in data['data']:
