@@ -134,7 +134,13 @@ for game in games:
     continue_game = True
     while continue_game:
         print(url)
-        data = requests.get(url, proxies=getprox()).text
+        try:
+            data = requests.get(url, proxies=getprox()).text
+        except:
+            with open('failedruns.txt', 'a') as f:
+                f.write(url + "\n")
+                f.close()
+            pass
         data = json.loads(data)
         offset += 200
         try:
