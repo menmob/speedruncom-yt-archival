@@ -126,7 +126,7 @@ games = games.split('\n')
 
 
 for game in games:
-    if game == "":
+    if len(game) < 3:
         pass
     offset = 0
     print(game)
