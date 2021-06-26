@@ -148,6 +148,7 @@ for game in games:
                     print(video)
                     with open('yt-speedrun-links-new.txt', 'a') as f:
                         f.write(video + "\n")
+                        f.close()
 
             except:
                 pass
