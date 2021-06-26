@@ -144,6 +144,7 @@ for game in games:
             with open('failedgames.txt', 'a') as f:
                 f.write(game + "\n")
                 f.close()
+            continue_game = False
             continue
         url = f"https://www.speedrun.com/api/v1/runs?game={game}&max=200&offset={offset}"
 
